@@ -30,8 +30,7 @@ namespace FrmPresentacion
 
         private void agendarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFacturaciones agend = new FrmFacturaciones();
-            agend.Show();
+          
         }
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,5 +61,18 @@ namespace FrmPresentacion
             FrmReserva reserva = new FrmReserva();
             reserva.Show();
         }
+
+        private void facturaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmFactura factura = new FrmFactura();
+            factura.Show();
+        }
+
+        private void saalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        
     }
 }

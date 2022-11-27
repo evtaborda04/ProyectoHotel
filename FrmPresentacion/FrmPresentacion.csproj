@@ -90,12 +90,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFacturaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacturaciones.Designer.cs">
-      <DependentUpon>FrmFacturaciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmconsultaFactura.resx">
       <DependentUpon>FrmconsultaFactura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacturaciones.resx">
-      <DependentUpon>FrmFacturaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
@@ -195,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondoazul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logofondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

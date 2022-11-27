@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Datos;
+using Entidad;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,34 +22,21 @@ namespace FrmPresentacion
             
         }
 
-
-
-
-
-        void BuscarDatos()
+        void cargarfacturas(string condicion)
         {
-            //grillaconsulta.DataSource = new Logica.ServicioFacturaciones().Consultar();
-        }
-        //void BuscarDatosFiltro(String Filtro)
-        //{
-        //    grillaconsulta.Rows.Clear();
-        //    foreach (var item in lista)
-        //    {
-        //        if (item.codigofactura.ToUpper().StartsWith(Filtro.ToUpper()))
-        //        {
-        //            grillaconsulta.Rows.Add(item.codigofactura,item.habitacion.IdHabitacion, item.fechaingreso, item.fechasalida, item.cliente.Nom,item.tipohab,item.precio);
-        //        }
-        //    }
-        //}
+            grillaconsulta.DataSource = new repositorioFactura().ConsultarTodos(condicion);
 
-        private void ConsultaFactura_Load(object sender, EventArgs e)
-        {
-            //BuscarDatosFiltro("");
         }
 
         private void buscarfactura_TextChanged(object sender, EventArgs e)
         {
-            //BuscarDatosFiltro(buscarfactura.Text);
+            string condicion = txtbuscarfactura.Text.Trim();
+            cargarfacturas(condicion);
+        }
+
+        private void FrmconsultaFactura_Load(object sender, EventArgs e)
+        {
+            cargarfacturas("");
         }
     }
 }

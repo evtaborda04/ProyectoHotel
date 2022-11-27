@@ -74,10 +74,6 @@ namespace FrmPresentacion
 
         }
 
-
-
-
-
         void cargarcedula()
         {
             cmbcedulas.DataSource = Rr.cargarcedulas();

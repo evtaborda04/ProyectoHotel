@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Datos;
+using Entidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,53 +10,80 @@ namespace Logica
 {
     public class ServicioFactura
     {
-        //Datos.RepositorioFactura repositorio = new Datos.RepositorioFactura();
-        //List<Facturacion> listarfacturas;
-        //public ServicioFactura()
-        //{
-        //    listarfacturas = repositorio.Consultar();
-        //}
-        //void Actualizar()
-        //{
-        //    listarfacturas = repositorio.Consultar();
-        //}
-        //public string Guardar(Facturacion facturaciones)
-        //{
-        //    //validar
-        //    return repositorio.Guardar(facturaciones);
+        repositorioFactura repositoriofactura = new repositorioFactura();
+        List<Factura> lista = new List<Factura>();
+        private string id;
 
-        //}
-        //public string Eliminar(string facturas)
-        //{
-        //    //validar
-        //    return repositorio.Eliminar(facturas);
+        public string Guardar(Factura factura)
+        {
+            string mensaje = string.Empty;
+            try
+            {
+                mensaje = repositoriofactura.Insertar(factura);
+                return mensaje;
 
-        //}
+            }
+            catch (Exception e)
+            {
+                return "Error:" + e.Message;
+            }
+        }
+        public Factura Buscar(string id)
+        {
+            foreach (var item in lista)
+            {
+                if (Convert.ToString( item.codigofactura) == id)
+                {
+                    return item;
+                }
 
-        //public string Modificar(List<Facturacion> facturaciones)
-        //{
-        //    //validar
-        //    return repositorio.Modificar(facturaciones);
+            }
+            return null;
 
-        //}
-        //public Factura BuscarReserva(string codfactura)
-        //{
-        //    //List<Entidad.Cuenta> cuentas = new List<Entidad.Cuenta>();
-        //    Actualizar();
-        //    foreach (var item in listarfacturas)
-        //    {
-        //        if (item.codfactura == codfactura)
-        //        {
-        //            return item;
-        //        }
-        //    }
-        //    return null;
-        //}
+        }
 
-        //public List<Facturacion> Consultar()
-        //{
-        //    //Actualizar();
-        //    return listarfacturas;
-        //}
+        public Response Buscarconid(string id)
+        {
+            try
+            {
+                return new Response(repositoriofactura.BuscarFactura(id));
+            }
+            catch (Exception exception)
+            {
+                return new Response("Se presentó el siguiente error:" + exception.Message);
+            }
+        }
+
+
+
+        public string Eliminar(Factura factura)
+        {
+            Factura facturas = Buscar(id);
+
+            if (factura != null)
+            {
+                return "factura no existe";
+            }
+            else
+            {
+                repositoriofactura.Eliminar(factura);
+
+                return "factura eliminada";
+            }
+        }
+        public string Actualizar(Factura factura)
+        {
+            Factura facturas = Buscar(id);
+            if (factura == null)
+            {
+                return Guardar(factura);
+
+            }
+            else
+            {
+                factura.codigofactura = factura.codigofactura;
+                return repositoriofactura.Actualizar(factura);
+            }
+        }
     }
 }

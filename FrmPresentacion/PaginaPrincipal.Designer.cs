@@ -28,140 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.PanelPadre = new System.Windows.Forms.MenuStrip();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.habitacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saalirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelPadre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 48);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Location = new System.Drawing.Point(0, 24);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip2.TabIndex = 2;
-            this.menuStrip2.Text = "menuStrip2";
             // 
             // PanelPadre
             // 
+            this.PanelPadre.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.PanelPadre.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agendaToolStripMenuItem,
             this.habitacionesToolStripMenuItem1,
-            this.agendarToolStripMenuItem,
+            this.reservasToolStripMenuItem,
+            this.facturaToolStripMenuItem,
             this.listarFacturasToolStripMenuItem,
-            this.salirToolStripMenuItem,
-            this.reservasToolStripMenuItem});
+            this.saalirToolStripMenuItem});
             this.PanelPadre.Location = new System.Drawing.Point(0, 0);
             this.PanelPadre.Name = "PanelPadre";
-            this.PanelPadre.Size = new System.Drawing.Size(800, 24);
+            this.PanelPadre.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.PanelPadre.Size = new System.Drawing.Size(980, 29);
             this.PanelPadre.TabIndex = 4;
             this.PanelPadre.Text = "PanelPadre";
             // 
             // agendaToolStripMenuItem
             // 
+            this.agendaToolStripMenuItem.BackColor = System.Drawing.Color.Turquoise;
+            this.agendaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.agendaToolStripMenuItem.Text = "Clientes";
             this.agendaToolStripMenuItem.Click += new System.EventHandler(this.agendaToolStripMenuItem_Click);
             // 
             // habitacionesToolStripMenuItem1
             // 
+            this.habitacionesToolStripMenuItem1.BackColor = System.Drawing.Color.Turquoise;
+            this.habitacionesToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.habitacionesToolStripMenuItem1.Name = "habitacionesToolStripMenuItem1";
-            this.habitacionesToolStripMenuItem1.Size = new System.Drawing.Size(88, 20);
+            this.habitacionesToolStripMenuItem1.Size = new System.Drawing.Size(118, 25);
             this.habitacionesToolStripMenuItem1.Text = "Habitaciones";
             this.habitacionesToolStripMenuItem1.Click += new System.EventHandler(this.habitacionesToolStripMenuItem1_Click);
             // 
-            // agendarToolStripMenuItem
+            // reservasToolStripMenuItem
             // 
-            this.agendarToolStripMenuItem.Name = "agendarToolStripMenuItem";
-            this.agendarToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.agendarToolStripMenuItem.Text = "Factura";
-            this.agendarToolStripMenuItem.Click += new System.EventHandler(this.agendarToolStripMenuItem_Click);
+            this.reservasToolStripMenuItem.BackColor = System.Drawing.Color.Turquoise;
+            this.reservasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
+            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(86, 25);
+            this.reservasToolStripMenuItem.Text = "Reservas";
+            this.reservasToolStripMenuItem.Click += new System.EventHandler(this.reservasToolStripMenuItem_Click);
+            // 
+            // facturaToolStripMenuItem
+            // 
+            this.facturaToolStripMenuItem.BackColor = System.Drawing.Color.Turquoise;
+            this.facturaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
+            this.facturaToolStripMenuItem.Text = "Factura";
+            this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click_1);
             // 
             // listarFacturasToolStripMenuItem
             // 
+            this.listarFacturasToolStripMenuItem.BackColor = System.Drawing.Color.Turquoise;
+            this.listarFacturasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listarFacturasToolStripMenuItem.Name = "listarFacturasToolStripMenuItem";
-            this.listarFacturasToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.listarFacturasToolStripMenuItem.Size = new System.Drawing.Size(129, 25);
             this.listarFacturasToolStripMenuItem.Text = "Listar Facturas";
             this.listarFacturasToolStripMenuItem.Click += new System.EventHandler(this.listarFacturasToolStripMenuItem_Click);
             // 
-            // salirToolStripMenuItem
+            // saalirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::FrmPresentacion.Properties.Resources.descarga;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 378);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // reservasToolStripMenuItem
-            // 
-            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.reservasToolStripMenuItem.Text = "Reservas";
-            this.reservasToolStripMenuItem.Click += new System.EventHandler(this.reservasToolStripMenuItem_Click);
+            this.saalirToolStripMenuItem.BackColor = System.Drawing.Color.Turquoise;
+            this.saalirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saalirToolStripMenuItem.Name = "saalirToolStripMenuItem";
+            this.saalirToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
+            this.saalirToolStripMenuItem.Text = "Salir";
+            this.saalirToolStripMenuItem.Click += new System.EventHandler(this.saalirToolStripMenuItem_Click);
             // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Teal;
+            this.BackgroundImage = global::FrmPresentacion.Properties.Resources.hotel;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(980, 526);
             this.Controls.Add(this.PanelPadre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "PaginaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaginaPrincipal";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PanelPadre.ResumeLayout(false);
             this.PanelPadre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.MenuStrip PanelPadre;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem habitacionesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem agendarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarFacturasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saalirToolStripMenuItem;
     }
 }

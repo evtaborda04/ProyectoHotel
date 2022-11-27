@@ -6,43 +6,38 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Factura : Habitacion
+    public class Factura
     {
-    
-        public string codigofactura { get; set; }
+        #region
+        public int codigofactura { get; set; }
         public DateTime fechaingreso { get; set; }
         public DateTime fechasalida { get; set; }
-        public Habitacion habitacion { get; set; }
-        public Cliente cliente { get; set; }
+        public string codreserva { get; set; }
+        public string cedula { get; set; }
+        public string Nombre { get; set; }
+        public string habitacion { get; set; }
         public string tipohab { get; set; }
-        
-
+        public double precio { get; set; }
+        public int cantidad_dias { get; set; }
+        public double Total { get; set; }
+        #endregion
         public Factura()
         {
         }
 
-    
-
-    
-
-        public Factura(string codigofactura,Habitacion habitacion, DateTime fechaingreso, DateTime fechasalida, Cliente cliente, string tipohab, double precio)
+        public Factura(int codigofactura, DateTime fechaingreso, DateTime fechasalida, string codreserva, string cedula, string nombre, string habitacion, string tipohab, double precio, int cantidad_dias, double total)
         {
             this.codigofactura = codigofactura;
-            this.habitacion = habitacion;
             this.fechaingreso = fechaingreso;
             this.fechasalida = fechasalida;
-            this.cliente = cliente;
+            this.codreserva = codreserva;
+            this.cedula = cedula;
+            Nombre = nombre;
+            this.habitacion = habitacion;
             this.tipohab = tipohab;
             this.precio = precio;
+            this.cantidad_dias = cantidad_dias;
+            Total = total;
         }
-
-
-        public override string ToString()
-        {
-            return codigofactura.ToString() + ";" + habitacion.IdHabitacion.ToString() +";"+  fechaingreso.ToString()
-                + ";" + fechasalida.ToString() + ";" + cliente.IDCliente.ToString() + ";" +
-                 tipohab.ToString() + ";" + precio.ToString();
-        }
-
     }
 }

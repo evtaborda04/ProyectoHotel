@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Datos;
+using Entidad;
 using Logica;
 using System;
 using System.CodeDom;
@@ -15,64 +16,82 @@ namespace FrmPresentacion
 {
     public partial class FrmFactura : Form
     {
+        ServicioCliente serviciocliente;
+        ServicioHabitacion servicioHabitacion;
+        servicioReserva servicioreserva;
+        ServicioFactura serviciofactura;
+        public FrmFactura()
+        {
+            InitializeComponent();
+            serviciocliente = new ServicioCliente();
+            servicioHabitacion = new ServicioHabitacion();
+            servicioreserva = new servicioReserva();
+            serviciofactura = new ServicioFactura();
+        }
+        repositorioFactura Rf = new repositorioFactura();
+        void cargarreserva()
+        {
+            cmbcodreserva.DataSource = Rf.cargarfacturas();
+            cmbcodreserva.DisplayMember = "idreserva";
+        }
+
+        void ver_reserva(Reserva res)
+        {
+            if (res == null)
+            {
+                return;
+            }
+            txtidcliente.Text = res.idcliente;
+            txtnombre.Text = res.Nom;
+            txtcodhabitacion.Text = res.codhabitacion;
+            txttipohabitacion.Text = res.tipohabitacion;
+            txtprecio.Text =Convert.ToString( res.precio);
+        }
+        private Factura guardadofactura()
+        {
+            double valor =Convert.ToDouble( txtprecio.Text);
+            int dias = (int)numericdias.Value;
+            double total = valor * dias;
+
+
+            Factura factura = new Factura
+
+            {
+                fechaingreso = dateingreso.Value,
+                fechasalida = datesalida.Value,
+                codreserva = cmbcodreserva.Text,
+                cedula = txtidcliente.Text,
+                Nombre = txtnombre.Text,
+                habitacion = txtcodhabitacion.Text,
+                tipohab = txttipohabitacion.Text,
+                precio = Convert.ToDouble(txtprecio.Text),
+                cantidad_dias = ((int)numericdias.Value),
+                Total = total
+            };
+            txttotal.Text = factura.Total.ToString();
+            return factura;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("GUARDADO");
+            string guardado = serviciofactura.Guardar(guardadofactura());
+            MessageBox.Show(guardado);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Finalizado");
+            this.Dispose();
         }
-        //public FrmFactura()
-        //{
-        //    InitializeComponent();
-        //}
 
-        //private void btnGuardar_Click(object sender, EventArgs e)
-        //{
-        //    guardar();
-        //}
+        private void FrmFactura_Load(object sender, EventArgs e)
+        {
+            cargarreserva();
+        }
 
-        //void guardar()
-        //{
-        //    Cliente clientes;
-        //    string codreserva;
-        //    string codigofactura;
-        //    DateTime fechaingreso;
-        //    DateTime fechasalida;
-        //    string tipohabitacion;
-        //    double precio;
-        //    string id;
-
-
-        //    Facturacion facturas = new Facturacion();
-        //    ServicioFactura servico = new ServicioFactura();
-        //    id = txtidcliente.Text;
-        //    clientes = new ServicioCliente().BuscarID(id);
-        //    if (clientes == null)
-        //    {
-        //        MessageBox.Show("Cliente No existe, Por favor registrarse previamente");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        codigofactura = txtcodigofactura.Text;
-        //        codreserva = txtcodigoreserva.Text;
-        //        tipohabitacion = cmbtipohabitacion.Text;
-        //        precio = Convert.ToDouble(txtprecio.Text);   
-        //        fechaingreso = dateingreso.Value;
-        //        fechasalida = datesalida.Value;
-        //        double valor =Convert.ToDouble( txtprecio.Text);
-
-
-        //        Facturacion facturasfinal = new Facturacion(codigofactura,codreserva , clientes, tipohabitacion, precio,fechaingreso,fechasalida);
-        //        servico.Guardar(facturasfinal);
-        //        MessageBox.Show("Factura guardada correctamente");
-        //    }
-
-
-        //}
-
+        private void btnbuscare_Click(object sender, EventArgs e)
+        {
+            var respuesta = servicioreserva.Buscarconid(cmbcodreserva.Text);
+            ver_reserva(respuesta.Reserva);
+        }
     }
 }

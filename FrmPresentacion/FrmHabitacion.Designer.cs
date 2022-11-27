@@ -60,14 +60,17 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-3, 2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(883, 454);
+            this.tabControl1.Size = new System.Drawing.Size(948, 490);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = global::FrmPresentacion.Properties.Resources.logofondo;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.listahabitaciones);
             this.tabPage1.Controls.Add(this.numericpisos);
             this.tabPage1.Controls.Add(this.btnSalir);
@@ -86,7 +89,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(875, 428);
+            this.tabPage1.Size = new System.Drawing.Size(940, 464);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestion Habitaciones";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,7 +97,7 @@
             // listahabitaciones
             // 
             this.listahabitaciones.FormattingEnabled = true;
-            this.listahabitaciones.Location = new System.Drawing.Point(596, 0);
+            this.listahabitaciones.Location = new System.Drawing.Point(598, 12);
             this.listahabitaciones.Name = "listahabitaciones";
             this.listahabitaciones.Size = new System.Drawing.Size(270, 225);
             this.listahabitaciones.TabIndex = 17;
@@ -102,7 +105,7 @@
             // 
             // numericpisos
             // 
-            this.numericpisos.Location = new System.Drawing.Point(144, 188);
+            this.numericpisos.Location = new System.Drawing.Point(318, 193);
             this.numericpisos.Maximum = new decimal(new int[] {
             4,
             0,
@@ -124,73 +127,79 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(711, 273);
+            this.btnSalir.Location = new System.Drawing.Point(752, 299);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(123, 48);
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(296, 273);
+            this.btnBuscar.Location = new System.Drawing.Point(337, 299);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(123, 48);
             this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnactualizar
             // 
+            this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnactualizar.Location = new System.Drawing.Point(434, 273);
+            this.btnactualizar.Location = new System.Drawing.Point(475, 299);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(123, 48);
             this.btnactualizar.TabIndex = 13;
             this.btnactualizar.Text = "Actualizar";
-            this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.UseVisualStyleBackColor = false;
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btneliminar
             // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(572, 273);
+            this.btneliminar.Location = new System.Drawing.Point(613, 299);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(123, 48);
             this.btneliminar.TabIndex = 14;
             this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(158, 273);
+            this.btnGuardar.Location = new System.Drawing.Point(199, 299);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 48);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(20, 273);
+            this.btnNuevo.Location = new System.Drawing.Point(61, 299);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(123, 48);
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(148, 139);
+            this.txtPrecio.Location = new System.Drawing.Point(322, 144);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 20);
             this.txtPrecio.TabIndex = 8;
@@ -198,22 +207,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 139);
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(249, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(67, 21);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Precio";
+            this.label4.Text = "Precio:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 188);
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(238, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 5;
-            this.label3.Text = "N°_Piso";
+            this.label3.Text = "N°_Piso:";
             // 
             // cmbtipohabitacion
             // 
@@ -221,7 +232,7 @@
             this.cmbtipohabitacion.Items.AddRange(new object[] {
             "ESTANDAR",
             "VIP"});
-            this.cmbtipohabitacion.Location = new System.Drawing.Point(148, 92);
+            this.cmbtipohabitacion.Location = new System.Drawing.Point(322, 97);
             this.cmbtipohabitacion.Name = "cmbtipohabitacion";
             this.cmbtipohabitacion.Size = new System.Drawing.Size(121, 21);
             this.cmbtipohabitacion.TabIndex = 4;
@@ -229,16 +240,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 100);
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(173, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Tipo Habitacion";
+            this.label2.Text = "Tipo Habitacion:";
             // 
             // txtidhabitacion
             // 
-            this.txtidhabitacion.Location = new System.Drawing.Point(149, 53);
+            this.txtidhabitacion.Location = new System.Drawing.Point(323, 58);
             this.txtidhabitacion.Name = "txtidhabitacion";
             this.txtidhabitacion.Size = new System.Drawing.Size(121, 20);
             this.txtidhabitacion.TabIndex = 1;
@@ -246,22 +258,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 60);
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(196, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Id Habitacion";
+            this.label1.Text = "Id Habitacion:";
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::FrmPresentacion.Properties.Resources.logofondo;
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.txtbuscaridhabitacion);
             this.tabPage2.Controls.Add(this.grillahabitaciones);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(875, 428);
+            this.tabPage2.Size = new System.Drawing.Size(871, 431);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar Habitaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -270,7 +285,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(151, 39);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(165, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 16);
             this.label5.TabIndex = 2;
@@ -278,7 +294,7 @@
             // 
             // txtbuscaridhabitacion
             // 
-            this.txtbuscaridhabitacion.Location = new System.Drawing.Point(216, 35);
+            this.txtbuscaridhabitacion.Location = new System.Drawing.Point(230, 38);
             this.txtbuscaridhabitacion.Name = "txtbuscaridhabitacion";
             this.txtbuscaridhabitacion.Size = new System.Drawing.Size(100, 20);
             this.txtbuscaridhabitacion.TabIndex = 1;
@@ -287,7 +303,7 @@
             // grillahabitaciones
             // 
             this.grillahabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillahabitaciones.Location = new System.Drawing.Point(154, 61);
+            this.grillahabitaciones.Location = new System.Drawing.Point(168, 61);
             this.grillahabitaciones.Name = "grillahabitaciones";
             this.grillahabitaciones.Size = new System.Drawing.Size(445, 198);
             this.grillahabitaciones.TabIndex = 0;
@@ -297,9 +313,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 457);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(948, 490);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmHabitacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmHabitacion";
             this.Load += new System.EventHandler(this.FrmHabitacion_Load);
             this.tabControl1.ResumeLayout(false);

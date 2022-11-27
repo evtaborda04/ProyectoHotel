@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listadoclientes = new System.Windows.Forms.ListBox();
-            this.btConect = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
@@ -62,18 +61,20 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 12);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(858, 389);
+            this.tabControl1.Size = new System.Drawing.Size(948, 490);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.AllowDrop = true;
+            this.tabPage1.BackgroundImage = global::FrmPresentacion.Properties.Resources.logofondo;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.listadoclientes);
-            this.tabPage1.Controls.Add(this.btConect);
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.btnactualizar);
@@ -84,7 +85,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(850, 363);
+            this.tabPage1.Size = new System.Drawing.Size(940, 464);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,79 +99,75 @@
             this.listadoclientes.TabIndex = 11;
             this.listadoclientes.SelectedIndexChanged += new System.EventHandler(this.listadoclientes_SelectedIndexChanged);
             // 
-            // btConect
-            // 
-            this.btConect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConect.Location = new System.Drawing.Point(733, 311);
-            this.btConect.Name = "btConect";
-            this.btConect.Size = new System.Drawing.Size(92, 34);
-            this.btConect.TabIndex = 10;
-            this.btConect.Text = "Conectar BD";
-            this.btConect.UseVisualStyleBackColor = true;
-            // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(623, 256);
+            this.btnSalir.Location = new System.Drawing.Point(653, 285);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(91, 37);
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(332, 256);
+            this.btnBuscar.Location = new System.Drawing.Point(362, 285);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 37);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnactualizar
             // 
+            this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnactualizar.Location = new System.Drawing.Point(429, 256);
+            this.btnactualizar.Location = new System.Drawing.Point(459, 285);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(91, 37);
             this.btnactualizar.TabIndex = 7;
             this.btnactualizar.Text = "Actualizar";
-            this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.UseVisualStyleBackColor = false;
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btneliminar
             // 
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(526, 256);
+            this.btneliminar.Location = new System.Drawing.Point(556, 285);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(91, 37);
             this.btneliminar.TabIndex = 8;
             this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(235, 256);
+            this.btnGuardar.Location = new System.Drawing.Point(265, 285);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 37);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(138, 256);
+            this.btnNuevo.Location = new System.Drawing.Point(168, 285);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(91, 37);
             this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
@@ -193,9 +190,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(17, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Genero:";
             // 
@@ -206,7 +205,7 @@
             "MASCULINO",
             "FEMENINO",
             "OTRO"});
-            this.cmbgenero.Location = new System.Drawing.Point(70, 147);
+            this.cmbgenero.Location = new System.Drawing.Point(98, 150);
             this.cmbgenero.Name = "cmbgenero";
             this.cmbgenero.Size = new System.Drawing.Size(166, 21);
             this.cmbgenero.TabIndex = 3;
@@ -214,15 +213,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(21, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 5;
             this.label3.Text = "Apellido:";
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(70, 112);
+            this.txtapellido.Location = new System.Drawing.Point(98, 115);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(166, 20);
             this.txtapellido.TabIndex = 2;
@@ -230,15 +231,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(21, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(79, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre:";
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(70, 74);
+            this.txtnombre.Location = new System.Drawing.Point(98, 77);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(166, 20);
             this.txtnombre.TabIndex = 1;
@@ -246,28 +249,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(21, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cedula:";
             // 
             // txtcedula
             // 
-            this.txtcedula.Location = new System.Drawing.Point(70, 37);
+            this.txtcedula.Location = new System.Drawing.Point(98, 40);
             this.txtcedula.Name = "txtcedula";
             this.txtcedula.Size = new System.Drawing.Size(100, 20);
             this.txtcedula.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::FrmPresentacion.Properties.Resources.logofondo;
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.txtbuscargrilla);
             this.tabPage2.Controls.Add(this.grilladeclientes);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(850, 363);
+            this.tabPage2.Size = new System.Drawing.Size(849, 374);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta Clientes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -303,9 +310,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 400);
+            this.ClientSize = new System.Drawing.Size(948, 490);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmClientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.tabControl1.ResumeLayout(false);
@@ -342,7 +350,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btConect;
         private System.Windows.Forms.ListBox listadoclientes;
     }
 }
