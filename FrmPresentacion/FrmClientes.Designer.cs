@@ -51,14 +51,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtbuscargrilla = new System.Windows.Forms.TextBox();
             this.grilladeclientes = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-=======
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btConect = new System.Windows.Forms.Button();
->>>>>>> 7032a5b55285ea939b8b58c251c2ff2b4585ce90
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,10 +72,7 @@
             // tabPage1
             // 
             this.tabPage1.AllowDrop = true;
-<<<<<<< HEAD
             this.tabPage1.Controls.Add(this.listadoclientes);
-=======
->>>>>>> 7032a5b55285ea939b8b58c251c2ff2b4585ce90
             this.tabPage1.Controls.Add(this.btConect);
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.btnBuscar);
@@ -310,16 +299,6 @@
             this.grilladeclientes.TabIndex = 0;
             this.grilladeclientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilladeclientes_CellDoubleClick);
             // 
-            // btConect
-            // 
-            this.btConect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConect.Location = new System.Drawing.Point(733, 311);
-            this.btConect.Name = "btConect";
-            this.btConect.Size = new System.Drawing.Size(92, 34);
-            this.btConect.TabIndex = 10;
-            this.btConect.Text = "Conectar BD";
-            this.btConect.UseVisualStyleBackColor = true;
-            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,9 +343,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btConect;
-<<<<<<< HEAD
         private System.Windows.Forms.ListBox listadoclientes;
-=======
->>>>>>> 7032a5b55285ea939b8b58c251c2ff2b4585ce90
     }
 }

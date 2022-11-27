@@ -1,6 +1,9 @@
-﻿using Entidad;
+﻿using Datos.ICRUD;
+using Entidad;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,148 +11,127 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class repositorioHabitaciones
+    public class repositorioHabitaciones : Conexion, ICRUDHABITACION<Habitacion>
     {
-        string ruta = "HabitacionesHotel.txt";
-        public string Guardar(Habitacion habitacion)
+        public string Actualizar(Habitacion hab)
         {
             try
             {
+                string _sql = string.Format("UPDATE [dbo].[habitacion] SET [tipo] = '{0}' ,[precio] ='{1}',[nropiso] = '{2}' WHERE [ID] = '{3}'", hab.TipoHabitacion, hab.precio, hab.Nropiso, hab.IdHabitacion);
 
-                StreamWriter escritor = new StreamWriter(ruta, true);
-                escritor.WriteLine(habitacion.Linea());
-                escritor.Close();
-                return "Se guardaron los datos";
+                var cmd = new SqlCommand(_sql, conexionBd);
+                Abrirconexion();
+                int filas = cmd.ExecuteNonQuery();
+                Cerrarconexion();
+                if (filas == 1)
+                {
+                    return "se Actualizo la habitacion con"+hab.IdHabitacion+"correctamente";
+                }
+                return "No se pudo actualizar la habitacion = :" + hab.IdHabitacion;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public Habitacion BuscarHabitacion(string id)
+        {
+            try
+            {
+                string _sql = string.Format("select * from habitacion where Id='{0}'", id);
+                var cmd = new SqlCommand(_sql, conexionBd);
+                Abrirconexion();
+                var reader = cmd.ExecuteReader();
+                reader.Read();
+                var habitacion = new Habitacion(reader.GetString(0), reader.GetString(1), reader.GetDouble(2), reader.GetInt32(3));
+                Cerrarconexion();
+                return habitacion;
             }
             catch (Exception)
             {
 
-                return "NO Se guardaron los datos";
+                return null;
             }
-
         }
 
-        public string Modificar(List<Entidad.Habitacion> habitaciones)
+        public List<Habitacion> ConsultarTodos(string busqueda)
         {
-            try
-            {
-                StreamWriter escritor = new StreamWriter(ruta, false);
-                foreach (var item in habitaciones)
-                {
-                    escritor.WriteLine(item.Linea());
-                }
+            string _sql = string.Format("select * from habitacion where id like '{0}%' or tipo like '{1}%'", busqueda, busqueda);
+            System.Data.DataTable tabla = new DataTable("habitacion");
+            SqlDataAdapter adapter = new SqlDataAdapter(_sql, conexionBd);
 
-                escritor.Close();
+            adapter.Fill(tabla);
 
-                return "Se modificaron los datos los datos";
+            List<Habitacion> lista = new List<Habitacion>();
 
-            }
-            catch (Exception)
+            foreach (var fila in tabla.Rows)
             {
 
-                return "NO Se guardaron los datos";
+                lista.Add(map((DataRow)fila));
             }
-
-        }
-        public string Modificar_tmp(List<Entidad.Habitacion> habitaciones)
-        {
-            try
-            {
-                StreamWriter escritor = new StreamWriter("tmp.txt");
-                foreach (var item in habitaciones)
-                {
-                    escritor.WriteLine(item.Linea());
-
-                }
-
-                escritor.Close();
-
-                File.Delete(ruta);
-
-                File.Move("tmp.txt", ruta);
-
-                return "Se modificaron los datos los datos";
-
-
-            }
-            catch (Exception)
-            {
-
-                return "NO Se guardaron los datos";
-            }
-
-        }
-        public Habitacion Buscar(string idhabitacion)
-        {
-            List<Habitacion> habitaciones = ConsultarTodos();
-            foreach (var item in habitaciones)
-            {
-                if (Encontrado(item.IdHabitacion, idhabitacion))
-                {
-                    return item;
-                }
-            }
+            return lista;
             return null;
         }
-        private bool Encontrado(string IdHabitacionRegistrada, string IdHabitacionBuscada)
+        Habitacion map(DataRow fila)
         {
-            return IdHabitacionRegistrada == IdHabitacionBuscada;
+            Habitacion habitacion = new Habitacion();
+            habitacion.IdHabitacion = (string)fila[0];
+            habitacion.TipoHabitacion = (string)fila[1];
+            habitacion.precio = (double)fila[2];
+            habitacion.Nropiso = (int)fila[3];
+            return habitacion;
         }
 
-        public List<Habitacion> ConsultarTodos()
+        public string Eliminar(Habitacion hab)
         {
-            List<Habitacion> habitaciones = new List<Habitacion>();
-            FileStream archivo = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader lector = new StreamReader(ruta);
-            string linea = string.Empty;
-            while (!lector.EndOfStream)
+            try
             {
-                linea = lector.ReadLine();
-                Habitacion habitacion = new Habitacion(linea);
-                habitaciones.Add(habitacion);
-            }
-            lector.Close();
-            archivo.Close();
-            return habitaciones;
-        }
+                string _sql = string.Format("DELETE FROM [dbo].[habitacion] WHERE ID='{0}'", hab.IdHabitacion);
 
-
-        public void Eliminar(String idhabitacion)
-        {
-            List<Habitacion> habitaciones = new List<Habitacion>();
-            habitaciones = ConsultarTodos();
-            FileStream archivo = new FileStream(ruta, FileMode.Create);
-            archivo.Close();
-            foreach (var item in habitaciones)
-            {
-                if (!Encontrado(item.IdHabitacion, idhabitacion))
+                var cmd = new SqlCommand(_sql, conexionBd);
+                Abrirconexion();
+                int filas = cmd.ExecuteNonQuery();
+                Cerrarconexion();
+                if (filas == 1)
                 {
-                    Guardar(item);
-                }
-            }
-        }
-        public void Modificar_old(Habitacion habitacionfirst, Habitacion habitacionNew)
-        {
-            List<Habitacion> habitaciones;  //se almacenan todos los clientes
-            habitaciones = ConsultarTodos();
-            FileStream file = new FileStream(ruta, FileMode.Create);
-            file.Close();
-            foreach (var item in habitaciones)
-            {
-                if (!Encontrado(item.IdHabitacion, habitacionfirst.IdHabitacion))
-                {
-                    Guardar(item);
+                    return "habitacion con = :" + hab.IdHabitacion + "eliminada corretamente";
                 }
                 else
                 {
-                    Guardar(habitacionNew);
+                    return "No se pudo eliminar la habitacion con id  = :" + hab.IdHabitacion;
                 }
+
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
             }
         }
 
-        public List<Habitacion> FiltrarIdentificacion(string idhabitacion)
+        public string Insertar(Habitacion hab)
         {
-            return ConsultarTodos().Where(p => p.IdHabitacion.Equals(idhabitacion)).ToList();
+            try
+            {
+                string _sql = string.Format("INSERT INTO Habitacion VALUES('" + hab.IdHabitacion + "','" + hab.TipoHabitacion + "','" + hab.precio + "','" + hab.Nropiso + "')");
+                var cmd = new SqlCommand(_sql, conexionBd);
+                Abrirconexion();
+                int filas = cmd.ExecuteNonQuery();
+                Cerrarconexion();
+                if (filas > 0)
+                {
+                    return "Datos guardados satisfactoriamente";
+                }
+                return "No se pudo guardar los datos";
+
+            }
+            catch (Exception e)
+            {
+
+                return e.Message;
+            }
+            return null;
         }
     }
 }

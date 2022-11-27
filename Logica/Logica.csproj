@@ -36,12 +36,6 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-=======
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.21.8.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
-    </Reference>
->>>>>>> 7032a5b55285ea939b8b58c251c2ff2b4585ce90
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -83,6 +77,7 @@
     <Compile Include="ServicioFactura.cs" />
     <Compile Include="ServicioHabitacion.cs" />
     <Compile Include="ServicioFacturaciones.cs" />
+    <Compile Include="servicioReserva.cs" />
     <Compile Include="TemaColores.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,15 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-<<<<<<< HEAD
-=======
-    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
-      <SubType>Designer</SubType>
-    </None>
->>>>>>> 7032a5b55285ea939b8b58c251c2ff2b4585ce90
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

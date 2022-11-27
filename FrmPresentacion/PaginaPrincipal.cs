@@ -56,5 +56,11 @@ namespace FrmPresentacion
         {
             this.Close();
         }
+
+        private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReserva reserva = new FrmReserva();
+            reserva.Show();
+        }
     }
 }

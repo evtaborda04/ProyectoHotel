@@ -10,12 +10,9 @@ namespace Logica
 {
     public class ServicioHabitacion
     {
-        List<Habitacion> habitaciones;
-        repositorioHabitaciones repositorioHabitaciones = new repositorioHabitaciones();
-        public ServicioHabitacion()
-        {
-            habitaciones = repositorioHabitaciones.ConsultarTodos();
-        }
+        repositorioHabitaciones repositoriohabitacion = new repositorioHabitaciones();
+        List<Habitacion> lista = new List<Habitacion>();
+        private string id;
 
         public string Guardar(Habitacion habitacion)
         {
@@ -23,10 +20,9 @@ namespace Logica
             try
             {
 
-                if (repositorioHabitaciones.Buscar(habitacion.IdHabitacion) == null)
+                if (repositoriohabitacion.BuscarHabitacion(habitacion.IdHabitacion) == null)
                 {
-                    mensaje = repositorioHabitaciones.Guardar(habitacion);
-                    Actualizar();
+                    mensaje = repositoriohabitacion.Insertar(habitacion);
                     return mensaje;
 
                 }
@@ -38,75 +34,60 @@ namespace Logica
             }
         }
 
-        private void Actualizar()
-        {
-            habitaciones = repositorioHabitaciones.ConsultarTodos();
-        }
-        public List<Habitacion> Consultar()
-        {
-            return habitaciones;
-        }
 
-        public Habitacion BuscarHabitacion(string IDhabitacion)
+
+        public Response BuscarPorid(string id)
         {
-            foreach (var item in habitaciones)
+            try
             {
-                if (item.IdHabitacion == IDhabitacion)
+                return new Response(repositoriohabitacion.BuscarHabitacion(id));
+            }
+            catch (Exception exception)
+            {
+                return new Response("Se presentó el siguiente error:" + exception.Message);
+            }
+        }
+        public Habitacion Buscar(string id)
+        {
+            foreach (var item in lista)
+            {
+                if (item.IdHabitacion == id)
                 {
                     return item;
                 }
+
             }
             return null;
+
         }
 
-        public string Eliminar(string identificacion)
+        public string Eliminar(Habitacion habitacion)
         {
-            Habitacion habitacion = BuscarHabitacion(identificacion);
+            Habitacion habitaciones = Buscar(id);
+
+            if (habitacion != null)
+            {
+                return "habitacion no existe";
+            }
+            else
+            {
+                repositoriohabitacion.Eliminar(habitacion);
+
+                return "habitacion eliminada";
+            }
+        }
+        public string Actualizar(Habitacion habitacion)
+        {
+            Habitacion habitaciones = Buscar(id);
             if (habitacion == null)
             {
-                return "Habitacion no existe";
-            }
-            else
-            {
-                habitaciones.Remove(habitacion);
-
-                repositorioHabitaciones.Modificar_tmp(habitaciones);
-                return "Habitacion eliminada";
-            }
-        }
-        public string Modificar(string idhabitacion, Habitacion habitacion_New)
-        {
-            Habitacion habitacion_actual = BuscarHabitacion(idhabitacion);
-            if (habitacion_actual == null)
-            {
-                return Guardar(habitacion_New);
+                return Guardar(habitacion);
 
             }
             else
             {
-                habitacion_actual.IdHabitacion = habitacion_New.IdHabitacion;
-                return repositorioHabitaciones.Modificar_tmp(habitaciones);
-            }
-
-        }
-
-        public class HabitacionConsultaResponse
-        {
-            public List<Habitacion> Habitaciones { get; set; }
-            public string Message { get; set; }
-            public bool Error { get; set; }
-            public bool HabitacionEncontrada { get; set; }
-            public HabitacionConsultaResponse(string message)
-            {
-                Error = true;
-                Message = message;
-                HabitacionEncontrada = false;
-            }
-            public HabitacionConsultaResponse(List<Habitacion> habitaciones)
-            {
-                Habitaciones = habitaciones;
-                Error = false;
-                HabitacionEncontrada = true;
+                habitacion.IdHabitacion = habitacion.IdHabitacion;
+                return repositoriohabitacion.Actualizar(habitacion);
             }
         }
     }

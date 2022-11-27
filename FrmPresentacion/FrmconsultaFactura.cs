@@ -14,7 +14,7 @@ namespace FrmPresentacion
 {
     public partial class FrmconsultaFactura : Form
     {
-        List<Factura> lista = new Logica.ServicioFacturaciones().Consultar();
+        //List<Factura> lista = new Logica.ServicioFacturaciones().Consultar();
         public FrmconsultaFactura()
         {
             InitializeComponent();
@@ -27,28 +27,28 @@ namespace FrmPresentacion
 
         void BuscarDatos()
         {
-            grillaconsulta.DataSource = new Logica.ServicioFacturaciones().Consultar();
+            //grillaconsulta.DataSource = new Logica.ServicioFacturaciones().Consultar();
         }
-        void BuscarDatosFiltro(String Filtro)
-        {
-            grillaconsulta.Rows.Clear();
-            foreach (var item in lista)
-            {
-                if (item.codigofactura.ToUpper().StartsWith(Filtro.ToUpper()))
-                {
-                    grillaconsulta.Rows.Add(item.codigofactura,item.habitacion.IdHabitacion, item.fechaingreso, item.fechasalida, item.cliente.Nom,item.tipohab,item.precio);
-                }
-            }
-        }
+        //void BuscarDatosFiltro(String Filtro)
+        //{
+        //    grillaconsulta.Rows.Clear();
+        //    foreach (var item in lista)
+        //    {
+        //        if (item.codigofactura.ToUpper().StartsWith(Filtro.ToUpper()))
+        //        {
+        //            grillaconsulta.Rows.Add(item.codigofactura,item.habitacion.IdHabitacion, item.fechaingreso, item.fechasalida, item.cliente.Nom,item.tipohab,item.precio);
+        //        }
+        //    }
+        //}
 
         private void ConsultaFactura_Load(object sender, EventArgs e)
         {
-            BuscarDatosFiltro("");
+            //BuscarDatosFiltro("");
         }
 
         private void buscarfactura_TextChanged(object sender, EventArgs e)
         {
-            BuscarDatosFiltro(buscarfactura.Text);
+            //BuscarDatosFiltro(buscarfactura.Text);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace FrmPresentacion
             id = txtidcliente.Text;
             idhabitacion = txtidhabitacion.Text;
             //clientes = new ServicioCliente().BuscarID(id);
-            habitacion = new ServicioHabitacion().BuscarHabitacion(idhabitacion);
+            //habitacion = new ServicioHabitacion().BuscarHabitacion(idhabitacion);
 
 
 
@@ -68,31 +68,31 @@ namespace FrmPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Buscar(txtcodigoreserva.Text);
+            //Buscar(txtcodigoreserva.Text);
         }
 
-        void Buscar(string reservados)
-        {
+        //void Buscar(string reservados)
+        //{
 
-            ServicioFacturaciones reserva = new ServicioFacturaciones();
-            Factura reservar;
-
-
-            reservar = reserva.BuscarReserva( reservados);
-            if (reservar == null)
-            {
-                MessageBox.Show("La factura no existe");
-                return;
-
-            }
-            else
-            {
-                Ver(reservar);
-            }
+        //    ServicioFacturaciones reserva = new ServicioFacturaciones();
+        //    Factura reservar;
 
 
+        //    reservar = reserva.BuscarReserva( reservados);
+        //    if (reservar == null)
+        //    {
+        //        MessageBox.Show("La factura no existe");
+        //        return;
 
-        }
+        //    }
+        //    else
+        //    {
+        //        Ver(reservar);
+        //    }
+
+
+
+        //}
         Cliente cliente;
         void Ver(Factura reserva)
         {

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listahabitaciones = new System.Windows.Forms.ListBox();
             this.numericpisos = new System.Windows.Forms.NumericUpDown();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.grillahabitacion = new System.Windows.Forms.DataGridView();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,17 +46,12 @@
             this.txtidhabitacion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtbuscaridhabitacion = new System.Windows.Forms.TextBox();
             this.grillahabitaciones = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericpisos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillahabitacion)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillahabitaciones)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +68,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.listahabitaciones);
             this.tabPage1.Controls.Add(this.numericpisos);
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.btnBuscar);
@@ -80,7 +76,6 @@
             this.tabPage1.Controls.Add(this.btneliminar);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.btnNuevo);
-            this.tabPage1.Controls.Add(this.grillahabitacion);
             this.tabPage1.Controls.Add(this.txtPrecio);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
@@ -95,6 +90,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestion Habitaciones";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listahabitaciones
+            // 
+            this.listahabitaciones.FormattingEnabled = true;
+            this.listahabitaciones.Location = new System.Drawing.Point(596, 0);
+            this.listahabitaciones.Name = "listahabitaciones";
+            this.listahabitaciones.Size = new System.Drawing.Size(270, 225);
+            this.listahabitaciones.TabIndex = 17;
+            this.listahabitaciones.SelectedIndexChanged += new System.EventHandler(this.listahabitaciones_SelectedIndexChanged);
             // 
             // numericpisos
             // 
@@ -184,14 +188,6 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // grillahabitacion
-            // 
-            this.grillahabitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillahabitacion.Location = new System.Drawing.Point(422, 0);
-            this.grillahabitacion.Name = "grillahabitacion";
-            this.grillahabitacion.Size = new System.Drawing.Size(453, 224);
-            this.grillahabitacion.TabIndex = 9;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(148, 139);
@@ -270,6 +266,16 @@
             this.tabPage2.Text = "Listar Habitaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(151, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Buscar:";
+            // 
             // txtbuscaridhabitacion
             // 
             this.txtbuscaridhabitacion.Location = new System.Drawing.Point(216, 35);
@@ -281,45 +287,11 @@
             // grillahabitaciones
             // 
             this.grillahabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillahabitaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.grillahabitaciones.Location = new System.Drawing.Point(154, 61);
             this.grillahabitaciones.Name = "grillahabitaciones";
             this.grillahabitaciones.Size = new System.Drawing.Size(445, 198);
             this.grillahabitaciones.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id Habitacion";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tipo Habitacion";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Nro Pisos";
-            this.Column4.Name = "Column4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(151, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Buscar:";
+            this.grillahabitaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillahabitaciones_CellDoubleClick);
             // 
             // FrmHabitacion
             // 
@@ -334,7 +306,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericpisos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillahabitacion)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillahabitaciones)).EndInit();
@@ -355,7 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView grillahabitacion;
         private System.Windows.Forms.TextBox txtbuscaridhabitacion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBuscar;
@@ -364,10 +334,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.NumericUpDown numericpisos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listahabitaciones;
     }
 }

@@ -16,7 +16,11 @@ namespace Logica
         public Habitacion Habitacion { get; set; }
         public List<Habitacion> Habitaciones { get; set; }
         public Factura Factura { get; set; }
+       
         public List<Factura> Facturas { get; set; }
+   
+        public Reserva Reserva { get; set; }
+        public List<Reserva> Reservas { get; set; }
 
         public Response(Cliente cliente)
         {
@@ -69,7 +73,16 @@ namespace Logica
         {
         }
 
-
+        public Response(Reserva reserva)
+        {
+            Reserva = reserva;
+            Error = false;
+        }
+        public Response(List<Reserva> reservas)
+        {
+            Reservas = reservas;
+            Error = false;
+        }
 
     }
 }

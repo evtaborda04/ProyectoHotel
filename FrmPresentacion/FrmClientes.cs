@@ -1,7 +1,6 @@
 ﻿using Datos;
 using Entidad;
 using Logica;
-//using System.Data.OracleClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -192,14 +191,6 @@ namespace FrmPresentacion
             string id = listadoclientes.SelectedValue.ToString();
             Buscar(id);
         }
-
-        //private void btConect_Click(object sender, EventArgs e)
-        //{
-        //    OracleConnection ora = new OracleConnection("DATA SOURCE = ORACLE; PASSWORD = arrieta; USER ID = hote;");
-        //    ora.Open();
-        //    MessageBox.Show("Conectado");
-        //    ora.Close();
-        //}
     }
 
 }
