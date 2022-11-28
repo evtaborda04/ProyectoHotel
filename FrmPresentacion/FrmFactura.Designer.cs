@@ -114,6 +114,7 @@
             // 
             // txtprecio
             // 
+            this.txtprecio.Enabled = false;
             this.txtprecio.Location = new System.Drawing.Point(534, 66);
             this.txtprecio.Multiline = true;
             this.txtprecio.Name = "txtprecio";
@@ -147,6 +148,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Enabled = false;
             this.txtnombre.Location = new System.Drawing.Point(198, 121);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(131, 20);
@@ -165,6 +167,7 @@
             // 
             // txtcodhabitacion
             // 
+            this.txtcodhabitacion.Enabled = false;
             this.txtcodhabitacion.Location = new System.Drawing.Point(198, 151);
             this.txtcodhabitacion.Name = "txtcodhabitacion";
             this.txtcodhabitacion.Size = new System.Drawing.Size(131, 20);
@@ -183,6 +186,7 @@
             // 
             // txttipohabitacion
             // 
+            this.txttipohabitacion.Enabled = false;
             this.txttipohabitacion.Location = new System.Drawing.Point(198, 186);
             this.txttipohabitacion.Name = "txttipohabitacion";
             this.txttipohabitacion.Size = new System.Drawing.Size(131, 20);
@@ -294,6 +298,7 @@
             // 
             // txtidcliente
             // 
+            this.txtidcliente.Enabled = false;
             this.txtidcliente.Location = new System.Drawing.Point(197, 95);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(131, 20);

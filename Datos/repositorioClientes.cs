@@ -65,7 +65,7 @@ namespace Datos
             catch (Exception ex)
             {
 
-                return "El cliente tiene un vehiculo registrado, Por favor revisar";
+                return "El cliente tiene una Habitacion Asignada, Por favor revisar";
             }
         }
 

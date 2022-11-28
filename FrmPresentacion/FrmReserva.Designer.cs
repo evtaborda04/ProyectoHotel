@@ -147,6 +147,7 @@
             // 
             // txttipo
             // 
+            this.txttipo.Enabled = false;
             this.txttipo.Location = new System.Drawing.Point(194, 186);
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(166, 21);
@@ -166,6 +167,7 @@
             // 
             // txtprecio
             // 
+            this.txtprecio.Enabled = false;
             this.txtprecio.Location = new System.Drawing.Point(194, 212);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(166, 21);
@@ -209,6 +211,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.Enabled = false;
             this.txtnombre.Location = new System.Drawing.Point(194, 115);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(166, 21);
@@ -336,7 +339,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 422);
+            this.tabPage2.Size = new System.Drawing.Size(940, 462);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado reservas";
             this.tabPage2.UseVisualStyleBackColor = true;

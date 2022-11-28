@@ -33,7 +33,6 @@
             this.listahabitaciones = new System.Windows.Forms.ListBox();
             this.numericpisos = new System.Windows.Forms.NumericUpDown();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -74,7 +73,6 @@
             this.tabPage1.Controls.Add(this.listahabitaciones);
             this.tabPage1.Controls.Add(this.numericpisos);
             this.tabPage1.Controls.Add(this.btnSalir);
-            this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.btnactualizar);
             this.tabPage1.Controls.Add(this.btneliminar);
             this.tabPage1.Controls.Add(this.btnGuardar);
@@ -129,7 +127,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(752, 299);
+            this.btnSalir.Location = new System.Drawing.Point(630, 299);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(123, 48);
             this.btnSalir.TabIndex = 15;
@@ -137,23 +135,11 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(337, 299);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(123, 48);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnactualizar
             // 
             this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnactualizar.Location = new System.Drawing.Point(475, 299);
+            this.btnactualizar.Location = new System.Drawing.Point(339, 299);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(123, 48);
             this.btnactualizar.TabIndex = 13;
@@ -165,7 +151,7 @@
             // 
             this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(613, 299);
+            this.btneliminar.Location = new System.Drawing.Point(484, 299);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(123, 48);
             this.btneliminar.TabIndex = 14;
@@ -276,7 +262,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(871, 431);
+            this.tabPage2.Size = new System.Drawing.Size(940, 464);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar Habitaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -346,7 +332,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtbuscaridhabitacion;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnactualizar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnGuardar;
