@@ -38,10 +38,12 @@
             // grillaconsulta
             // 
             this.grillaconsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaconsulta.Enabled = false;
             this.grillaconsulta.Location = new System.Drawing.Point(31, 49);
             this.grillaconsulta.Name = "grillaconsulta";
             this.grillaconsulta.Size = new System.Drawing.Size(1136, 251);
             this.grillaconsulta.TabIndex = 0;
+            this.grillaconsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaconsulta_CellContentClick);
             // 
             // txtbuscarfactura
             // 

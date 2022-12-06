@@ -43,5 +43,10 @@ namespace FrmPresentacion
         {
             this.Close();
         }
+
+        private void grillaconsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
