@@ -76,60 +76,60 @@ namespace ProyectoHotel
             Console.SetCursorPosition(8, 12); Console.Write("Numero de piso : ");
             Console.SetCursorPosition(25, 10); id_habitacion = Console.ReadLine();
 
-            habitacion = servico.BuscarID(id_habitacion);
-            if (habitacion == null)
-            {
-                Console.Clear();
-                Console.WriteLine("La Habitacion no existe");
-                Console.ReadKey();
-                return;
-            }
+            //habitacion = servico.BuscarID(id_habitacion);
+            //if (habitacion == null)
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("La Habitacion no existe");
+            //    Console.ReadKey();
+            //    return;
+            //}
 
             //Console.SetCursorPosition(28, 12); Console.WriteLine(habitacion.NumPiso);
             //Console.SetCursorPosition(40, 19); Console.WriteLine(cliente.Genero);
 
 
-            string op = string.Empty;
-            Console.SetCursorPosition(8, 15); Console.WriteLine("desea eliniminar la Habitacion? S/N: ");
-            Console.SetCursorPosition(46, 15); op = Console.ReadLine();
-            if (op.ToUpper() == "S")
-            {
-                Console.Write(servico.Eliminar(id_habitacion));
+            //string op = string.Empty;
+            //Console.SetCursorPosition(8, 15); Console.WriteLine("desea eliniminar la Habitacion? S/N: ");
+            //Console.SetCursorPosition(46, 15); op = Console.ReadLine();
+            //if (op.ToUpper() == "S")
+            //{
+            //    Console.Write(servico.Eliminar(id_habitacion));
 
-            }
-            else
-            {
-                return;
-            }
-            Console.ReadKey();
+            //}
+            //else
+            //{
+            //    return;
+            //}
+            //Console.ReadKey();
         }
         public void MenuConsultar()
         {
-            Entidad.Habitacion habitacion = new Entidad.Habitacion();
-            Logica.ServicioHabitacion servico = new Logica.ServicioHabitacion();
-            int i = 0;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(38, 5); Console.Write(" C O N S U L T A R   H A B I T A C I O N E S");
-            Console.SetCursorPosition(20, 8); Console.Write("IdHabitacion");
-            Console.SetCursorPosition(35, 8); Console.Write("NumPiso");
-            Console.SetCursorPosition(45, 8); Console.Write("NumCama");
-            Console.SetCursorPosition(55, 8); Console.Write("NumDuchas");
-            Console.SetCursorPosition(65, 8); Console.Write("NumAir");
-            Console.SetCursorPosition(75, 8); Console.Write("NumTv");
-            Console.SetCursorPosition(85, 8); Console.Write("NumCloset");
-            foreach (var item in servico.Consultar())
-            {
-                i = i + 2;
-                //Console.SetCursorPosition(25, 8 + i); Console.Write(item.IdHabitacion);
-                //Console.SetCursorPosition(38, 8 + i); Console.Write(item.NumPiso);
-                //Console.SetCursorPosition(48, 8 + i); Console.Write(item.NumCama);
-                //Console.SetCursorPosition(58, 8 + i); Console.Write(item.NumDuchas);
-                //Console.SetCursorPosition(68, 8 + i); Console.Write(item.NumAir);
-                //Console.SetCursorPosition(78, 8 + i); Console.Write(item.NumTv);
-                //Console.SetCursorPosition(88, 8 + i); Console.Write(item.NumCloset);
-            }
+            //Entidad.Habitacion habitacion = new Entidad.Habitacion();
+            //Logica.ServicioHabitacion servico = new Logica.ServicioHabitacion();
+            //int i = 0;
+            //Console.Clear();
+            //Console.ForegroundColor = ConsoleColor.Black;
+            //Console.BackgroundColor = ConsoleColor.Blue;
+            //Console.SetCursorPosition(38, 5); Console.Write(" C O N S U L T A R   H A B I T A C I O N E S");
+            //Console.SetCursorPosition(20, 8); Console.Write("IdHabitacion");
+            //Console.SetCursorPosition(35, 8); Console.Write("NumPiso");
+            //Console.SetCursorPosition(45, 8); Console.Write("NumCama");
+            //Console.SetCursorPosition(55, 8); Console.Write("NumDuchas");
+            //Console.SetCursorPosition(65, 8); Console.Write("NumAir");
+            //Console.SetCursorPosition(75, 8); Console.Write("NumTv");
+            //Console.SetCursorPosition(85, 8); Console.Write("NumCloset");
+            //foreach (var item in servico.Consultar())
+            //{
+            //    i = i + 2;
+            //    //Console.SetCursorPosition(25, 8 + i); Console.Write(item.IdHabitacion);
+            //    //Console.SetCursorPosition(38, 8 + i); Console.Write(item.NumPiso);
+            //    //Console.SetCursorPosition(48, 8 + i); Console.Write(item.NumCama);
+            //    //Console.SetCursorPosition(58, 8 + i); Console.Write(item.NumDuchas);
+            //    //Console.SetCursorPosition(68, 8 + i); Console.Write(item.NumAir);
+            //    //Console.SetCursorPosition(78, 8 + i); Console.Write(item.NumTv);
+            //    //Console.SetCursorPosition(88, 8 + i); Console.Write(item.NumCloset);
+            //}
 
             Console.ReadKey();
         }

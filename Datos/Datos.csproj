@@ -72,10 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="ICRUD\ICRUDCLIENTE.cs" />
-    <Compile Include="ICRUD\ICRUDHABITACION.cs" />
-    <Compile Include="ICRUD\ICRUDFACTURA.cs" />
-    <Compile Include="ICRUD\ICRUDRESERVA.cs" />
+    <Compile Include="ICRUD\ICRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repositorioClientes.cs" />
     <Compile Include="repositorioFactura.cs" />

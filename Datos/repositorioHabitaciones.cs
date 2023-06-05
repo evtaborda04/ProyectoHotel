@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class repositorioHabitaciones : Conexion, ICRUDHABITACION<Habitacion>
+    public class repositorioHabitaciones : Conexion, ICRUD<Habitacion>
     {
         public string Actualizar(Habitacion hab)
         {
@@ -54,6 +54,7 @@ namespace Datos
                 return null;
             }
         }
+
 
         public List<Habitacion> ConsultarTodos(string busqueda)
         {
@@ -132,6 +133,33 @@ namespace Datos
                 return e.Message;
             }
             return null;
+        }
+
+        public string BuscarID(string id)
+        {
+            try
+            {
+                string _sql = string.Format("select Id from habitacion where Id='{0}'", id);
+                var cmd = new SqlCommand(_sql, conexionBd);
+                Abrirconexion();
+                int filas = cmd.ExecuteNonQuery();
+                Cerrarconexion();
+                if (filas > 0)
+                {
+                    return "Si esta disponible";
+                }
+                return "La habitacion ya esta ocupada";
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        Habitacion ICRUD<Habitacion>.BuscarID(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

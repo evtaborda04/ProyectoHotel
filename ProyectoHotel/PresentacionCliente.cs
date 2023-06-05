@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProyectoHotel
 {
     public class PresentacionCliente
@@ -78,66 +79,67 @@ namespace ProyectoHotel
         }
         public void MenuEliminar()
         {
-            Entidad.Cliente cliente;
-            string id_cliente;
-            Logica.ServicioCliente servico = new Logica.ServicioCliente();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(8, 6); Console.Write(" E L I M I N A R    C L I E N T E");
-            Console.SetCursorPosition(8, 10); Console.Write("Id Cliente : ");
-            Console.SetCursorPosition(8, 12); Console.Write("Nombre cliente : ");
+            //    Entidad.Cliente cliente;
+            //    string id_cliente;
+            //    Logica.ServicioCliente servico = new Logica.ServicioCliente();
+            //    Console.Clear();
+            //    Console.ForegroundColor = ConsoleColor.Black;
+            //    Console.BackgroundColor = ConsoleColor.Blue;
+            //    Console.SetCursorPosition(8, 6); Console.Write(" E L I M I N A R    C L I E N T E");
+            //    Console.SetCursorPosition(8, 10); Console.Write("Id Cliente : ");
+            //    Console.SetCursorPosition(8, 12); Console.Write("Nombre cliente : ");
 
-            Console.SetCursorPosition(21, 10); id_cliente = Console.ReadLine();
+            //    Console.SetCursorPosition(21, 10); id_cliente = Console.ReadLine();
 
-            cliente = servico.BuscarID(id_cliente);
-            if (cliente == null)
-            {
-                Console.Clear();
-                Console.WriteLine("cliente no existe");
-                Console.ReadKey();
-                return;
-            }
+            //    cliente = servico.BuscarID(id_cliente);
+            //    if (cliente == null)
+            //    {
+            //        Console.Clear();
+            //        Console.WriteLine("cliente no existe");
+            //        Console.ReadKey();
+            //        return;
+            //    }
 
-            Console.SetCursorPosition(28, 12); Console.WriteLine(cliente.Nom);
-            //Console.SetCursorPosition(40, 19); Console.WriteLine(cliente.Genero);
+            //    Console.SetCursorPosition(28, 12); Console.WriteLine(cliente.Nom);
+            //    Console.SetCursorPosition(40, 19); Console.WriteLine(cliente.Genero);
 
 
-            string op = string.Empty;
-            Console.SetCursorPosition(8, 15); Console.WriteLine("desea eliniminar el cliente s/n ..");
-            Console.SetCursorPosition(45, 15); op = Console.ReadLine();
-            if (op.ToUpper() == "S")
-            {
-                Console.Write(servico.Eliminar(id_cliente));
+            //    string op = string.Empty;
+            //    Console.SetCursorPosition(8, 15); Console.WriteLine("desea eliniminar el cliente s/n ..");
+            //    Console.SetCursorPosition(45, 15); op = Console.ReadLine();
+            //    if (op.ToUpper() == "S")
+            //    {
+            //        Console.Write(servico.Eliminar(id_cliente));
 
-            }
-            else
-            {
-                return;
-            }
-            Console.ReadKey();
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //    Console.ReadKey();
+
         }
         public void MenuConsultar()
         {
-            Entidad.Cliente cliente = new Entidad.Cliente();
-            Logica.ServicioCliente servico = new Logica.ServicioCliente();
-            int i = 0;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(8, 6); Console.Write("C O N S U L T A R   C L I E N T E");
-            Console.SetCursorPosition(20, 8); Console.Write("IdCliente");
-            Console.SetCursorPosition(35, 8); Console.Write("Nombre");
-            Console.SetCursorPosition(48, 8); Console.Write("Genero");
-            foreach (var item in servico.Consultar())
-            {
-                i = i + 3;
-                Console.SetCursorPosition(20, 8 + i); Console.Write(item.IDCliente);
-                Console.SetCursorPosition(35, 8 + i); Console.Write(item.Nom);
-                Console.SetCursorPosition(50, 8 + i); Console.Write(item.Genero);
-            }
+            //Entidad.Cliente cliente = new Entidad.Cliente();
+            //Logica.ServicioCliente servico = new Logica.ServicioCliente();
+            //int i = 0;
+            //Console.Clear();
+            //Console.ForegroundColor = ConsoleColor.Black;
+            //Console.BackgroundColor = ConsoleColor.Blue;
+            //Console.SetCursorPosition(8, 6); Console.Write("C O N S U L T A R   C L I E N T E");
+            //Console.SetCursorPosition(20, 8); Console.Write("IdCliente");
+            //Console.SetCursorPosition(35, 8); Console.Write("Nombre");
+            //Console.SetCursorPosition(48, 8); Console.Write("Genero");
+            //foreach (var item in servico.Consultar())
+            //{
+            //    i = i + 3;
+            //    Console.SetCursorPosition(20, 8 + i); Console.Write(item.IDCliente);
+            //    Console.SetCursorPosition(35, 8 + i); Console.Write(item.Nom);
+            //    Console.SetCursorPosition(50, 8 + i); Console.Write(item.Genero);
+            //}
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
         public void MenuModificar()
         {

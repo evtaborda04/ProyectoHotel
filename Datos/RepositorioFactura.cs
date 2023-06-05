@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class repositorioFactura : Conexion, ICRUDFACTURA<Factura>
+    public class repositorioFactura : Conexion, ICRUD<Factura>
     {
         public string Actualizar(Factura rent)
         {
             try
             {
                 string _sql = string.Format("UPDATE [dbo].[Factura] SET [fechaingreso] = '{0}' ,[fechasalida] ='{1}',[cod_reserva] = '{2}', [cedula]= '{3}',[nombre]= '{4}',[habitacion]= '{5}', [tipohabitacion]= '{6}', [precio]= '{7}', [cantidad_dias]= '{8}',[total]= '{9}' WHERE [cod_factura] = '{10}'"
-                    , rent.fechaingreso, rent.fechasalida, rent.codreserva, rent.cedula,
-                    rent.Nombre, rent.habitacion, rent.tipohab, rent.precio, rent.cantidad_dias,
+                    , rent.fechaingreso, rent.fechasalida, rent.codreserva, rent.IDCliente,
+                    rent.Nom, rent.codhabitacion, rent.tipohabitacion, rent.precio, rent.cantidad_dias,
                     rent.Total, rent.codigofactura);
 
                 var cmd = new SqlCommand(_sql, conexionBd);
@@ -84,10 +84,10 @@ namespace Datos
             factura.fechaingreso = (DateTime)fila[1];
             factura.fechasalida = (DateTime)fila[2];
             factura.codreserva = (string)fila[3];
-            factura.cedula = (string)fila[4];
-            factura.Nombre = (string)fila[5];
-            factura.habitacion = (string)fila[6];
-            factura.tipohab = (string)fila[7];
+            factura.IDCliente = (string)fila[4];
+            factura.Nom = (string)fila[5];
+            factura.codhabitacion = (string)fila[6];
+            factura.tipohabitacion = (string)fila[7];
             factura.precio = (double)fila[8];
             factura.cantidad_dias =(int)fila[9];
             factura.Total = (double)fila[10];
@@ -126,8 +126,8 @@ namespace Datos
             try
             {
                 string _sql = string.Format("INSERT INTO factura VALUES('" +  rent.fechaingreso + "','" + rent.fechasalida
-                    + "','" + rent.codreserva + "','" + rent.cedula + "','" +
-                    rent.Nombre + "','" + rent.habitacion + "','" + rent.tipohab + "','" +
+                    + "','" + rent.codreserva + "','" + rent.IDCliente + "','" +
+                    rent.Nom + "','" + rent.codhabitacion + "','" + rent.tipohabitacion + "','" +
                     rent.precio + "','" + rent.cantidad_dias + "','" + rent.Total + "')");
                 var cmd = new SqlCommand(_sql, conexionBd);
                 Abrirconexion();
@@ -157,6 +157,12 @@ namespace Datos
             DataTable tabla = new DataTable();
             dt.Fill(tabla);
             return tabla;
+        }
+
+        public Factura BuscarID(string id)
+        {
+            //Esta funcion no esta disponible en la factura
+            throw new NotImplementedException();
         }
     }
 }

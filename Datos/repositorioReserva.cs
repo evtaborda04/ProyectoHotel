@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class repositorioReserva : Conexion, ICRUDRESERVA<Reserva>
+    public class repositorioReserva : Conexion, ICRUD<Reserva>
     {
         public string Actualizar(Reserva res)
         {
             try
             {
-                string _sql = string.Format("UPDATE [dbo].[reserva] SET [cedula] = '{0}' ,[nombre] ='{1}',[cod_habitacion] = '{2}', [tipo]= '{3}',[precio]= '{4}' WHERE [idreserva] = '{5}'", res.idcliente, res.Nom, res.codhabitacion, res.tipohabitacion,res.precio,res.codreserva);
+                string _sql = string.Format("UPDATE [dbo].[reserva] SET [cedula] = '{0}' ,[nombre] ='{1}',[cod_habitacion] = '{2}', [tipo]= '{3}',[precio]= '{4}' WHERE [idreserva] = '{5}'", res.IDCliente, res.Nom, res.codhabitacion, res.tipohabitacion,res.precio,res.codreserva);
 
                 var cmd = new SqlCommand(_sql, conexionBd);
                 Abrirconexion();
@@ -77,7 +77,7 @@ namespace Datos
         {
             Reserva reserva = new Reserva();
             reserva.codreserva = (string)fila[0];
-            reserva.idcliente = (string)fila[1];
+            reserva.IDCliente = (string)fila[1];
             reserva.Nom = (string)fila[2];
             reserva.codhabitacion = (string)fila[3];
             reserva.tipohabitacion = (string)fila[4];
@@ -117,7 +117,9 @@ namespace Datos
         {
             try
             {
-                string _sql = string.Format("INSERT INTO reserva VALUES('" + res.codreserva + "','" + res.idcliente +"','" + res.Nom+ "','" + res.codhabitacion + "','" + res.tipohabitacion + "','" + res.precio + "')");
+
+                string _sql = string.Format("INSERT INTO reserva VALUES('" + res.codreserva + "','" + res.IDCliente + "','" + res.Nom + "','" + res.codhabitacion + "','" + res.tipohabitacion + "','" + res.precio + "')");
+                
                 var cmd = new SqlCommand(_sql, conexionBd);
                 Abrirconexion();
                 int filas = cmd.ExecuteNonQuery();
@@ -156,6 +158,10 @@ namespace Datos
             return tabla;
         }
 
+        public Reserva BuscarID(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
     }
 

@@ -15,11 +15,14 @@ namespace Logica
         List<Reserva> lista = new List<Reserva>();
         private string id;
 
+
         public string Guardar(Reserva reserva)
         {
             string mensaje = string.Empty;
             try
             {
+
+
                 mensaje = repositorioreserva.Insertar(reserva);
                 return mensaje;
 

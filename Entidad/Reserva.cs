@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Reserva 
+    public class Reserva : Cliente
     {
         public string codreserva { get; set; }
-        public string idcliente { get; set; }
-        public string Nom { get; set; }
         public string codhabitacion { get; set; }
         public string tipohabitacion { get; set; }
         public double precio { get; set; }
@@ -18,14 +16,21 @@ namespace Entidad
         {
         }
 
+
+
+
         public Reserva(string codreserva, string idcliente, string nom, string codhabitacion, string tipohabitacion, double precio)
         {
             this.codreserva = codreserva;
-            this.idcliente = idcliente;
+            this.IDCliente = idcliente;
             Nom = nom;
             this.codhabitacion = codhabitacion;
             this.tipohabitacion = tipohabitacion;
             this.precio = precio;
         }
+
+
+
+
     }
 }

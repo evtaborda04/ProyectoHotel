@@ -66,7 +66,7 @@ namespace FrmPresentacion
                 return;
             }
             txtcodreserva.Text = reserva.codreserva;
-            cmbcedulas.Text = reserva.idcliente;
+            cmbcedulas.Text = reserva.IDCliente;
             txtnombre.Text = reserva.Nom;
             cmbhabitacion.Text = reserva.codhabitacion;
             txttipo.Text = reserva.tipohabitacion;
@@ -110,7 +110,7 @@ namespace FrmPresentacion
             Reserva reserva = new Reserva
             {
                 codreserva = txtcodreserva.Text,
-                idcliente = cmbcedulas.Text,
+                IDCliente = cmbcedulas.Text,
                 Nom = txtnombre.Text,
                 codhabitacion = cmbhabitacion.Text,
                 tipohabitacion = txttipo.Text,
@@ -124,8 +124,10 @@ namespace FrmPresentacion
             CargarGrillaHabitacion("");
             cargarlistareservas("");
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             string guardar = servicioreserva.Guardar(guardadoreserva());
             MessageBox.Show(guardar);
             refresh();
@@ -148,7 +150,7 @@ namespace FrmPresentacion
             Reserva reserva = new Reserva
             {
                 codreserva = txtcodreserva.Text,
-                idcliente = cmbcedulas.Text,
+                IDCliente = cmbcedulas.Text,
                 Nom = txtnombre.Text,
                 codhabitacion = cmbhabitacion.Text,
                 tipohabitacion = txttipo.Text,

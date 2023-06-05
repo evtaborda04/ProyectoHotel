@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Factura
+    public class Factura: Reserva
     {
         #region
         public int codigofactura { get; set; }
         public DateTime fechaingreso { get; set; }
         public DateTime fechasalida { get; set; }
-        public string codreserva { get; set; }
-        public string cedula { get; set; }
-        public string Nombre { get; set; }
-        public string habitacion { get; set; }
-        public string tipohab { get; set; }
-        public double precio { get; set; }
         public int cantidad_dias { get; set; }
         public double Total { get; set; }
         #endregion
@@ -31,10 +25,10 @@ namespace Entidad
             this.fechaingreso = fechaingreso;
             this.fechasalida = fechasalida;
             this.codreserva = codreserva;
-            this.cedula = cedula;
-            Nombre = nombre;
-            this.habitacion = habitacion;
-            this.tipohab = tipohab;
+            this.IDCliente = cedula;
+            this.Nom = nombre;
+            this.codhabitacion = habitacion;
+            this.tipohabitacion = tipohab;
             this.precio = precio;
             this.cantidad_dias = cantidad_dias;
             Total = total;

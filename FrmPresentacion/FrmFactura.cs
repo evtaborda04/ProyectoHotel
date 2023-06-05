@@ -41,7 +41,7 @@ namespace FrmPresentacion
             {
                 return;
             }
-            txtidcliente.Text = res.idcliente;
+            txtidcliente.Text = res.IDCliente;
             txtnombre.Text = res.Nom;
             txtcodhabitacion.Text = res.codhabitacion;
             txttipohabitacion.Text = res.tipohabitacion;
@@ -60,10 +60,10 @@ namespace FrmPresentacion
                 fechaingreso = dateingreso.Value,
                 fechasalida = datesalida.Value,
                 codreserva = cmbcodreserva.Text,
-                cedula = txtidcliente.Text,
-                Nombre = txtnombre.Text,
-                habitacion = txtcodhabitacion.Text,
-                tipohab = txttipohabitacion.Text,
+                IDCliente = txtidcliente.Text,
+                Nom = txtnombre.Text,
+                codhabitacion = txtcodhabitacion.Text,
+                tipohabitacion = txttipohabitacion.Text,
                 precio = Convert.ToDouble(txtprecio.Text),
                 cantidad_dias = ((int)numericdias.Value),
                 Total = total

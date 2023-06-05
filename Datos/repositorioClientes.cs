@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class repositorioClientes : Conexion,ICRUDCLIENTE<Cliente>
+    public class repositorioClientes : Conexion,ICRUD<Cliente>
     {
         public string Insertar(Cliente cli)
         {
